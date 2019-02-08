@@ -1,0 +1,2 @@
+Esto pinta pinta puntos y su envoltura convexa:
+http://www.tarekatwan.com/index.php/2017/12/methods-for-testing-linear-separability-in-python/
