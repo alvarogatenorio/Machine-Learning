@@ -27,8 +27,9 @@ class LeastSquaresClassifier:
     # for the training data x and the tags t
     def compute_classifier(self):
         xt = np.transpose(self.x)
+        tt = np.transpose(self.t)
         # solving without inverting
-        return np.linalg.solve(np.dot(self.x,xt),np.dot(self.x,self.t))
+        return np.linalg.solve(np.dot(self.x,xt),np.dot(self.x,tt))
 
     # Classify the given data x according to the
     # previously computed classifier.

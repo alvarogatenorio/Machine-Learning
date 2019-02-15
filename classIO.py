@@ -20,6 +20,12 @@ class myIO:
     def readData(self):
         f = open(self.nombreArch, 'r')
         numPuntos = int(f.readline())
+        numClases = int(f.readline())
+        numPuntosXclase = []
+        
+        for j in range(0, numClases):
+            numPuntosXclase.append(int(f.readline()))
+          
         filas = 2*numPuntos
         matrizPuntos = []
         
@@ -36,7 +42,7 @@ class myIO:
                 matrizPuntos.append(linea[0:])
                 
         f.close()
-        return (numPuntos, matrizPuntos)
+        return (numPuntos, matrizPuntos,numClases,numPuntosXclase)
     
     #Xgusano = matrizPuntos[0:numPuntos]
     #T = matrizPuntos[numPuntos:]

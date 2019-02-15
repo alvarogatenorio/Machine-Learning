@@ -8,18 +8,17 @@ import classIO
 import classLeastSquared
 import numpy as np
 from io import StringIO
+import matplotlib.pyplot as plt
 
 #Read data from file
-myData = classIO.myIO('minCuadradosPrueba.txt');
+myData = classIO.myIO('puntosGenerados.txt');
 
 #Pair (numPoints, matrix with data)
 points = myData.readData();
 
 Xprime = np.transpose((points[1])[0:points[0]])
 T = np.transpose((points[1])[points[0]:])
-
-#print(Xprime)
-#print(T)
+K = points[2]
 
 #Compute W
 mySolutions = classLeastSquared.LeastSquaresClassifier(Xprime,T)
@@ -30,8 +29,17 @@ myW = mySolutions.compute_classifier()
 #Para plotear un punto: plt.plot(1,2,'bo')
 #https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html
 
+myprev = 0
+mynext = 0
 
-##########
+#we assume K <= 6
+classID = ['o','^','*','+','x','h']
+
+for i in range(0,K):
+    myprev = mynext
+    mynext = mynext + points[3][i]
+    plt.plot(Xprime[1, myprev:mynext], Xprime[2, myprev:mynext], classID[i])
+    
 
 #Classify new points
 stop = "dontwanttostop"
@@ -46,7 +54,7 @@ while stop != "stp":
     newPoint = np.genfromtxt(StringIO(newPoint))
     newClass = mySolutions.classify(newPoint, myW)
     
-    print(newClass)
-
+    print("La clase del nuevo punto es: " + str(newClass +1))
+    plt.plot(newPoint[0], newPoint[1], classID[newClass])
 
 

@@ -5,18 +5,16 @@ Editor de Spyder
 Este es un archivo temporal
 """
 
-#%matplotlib inline
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-N = 300
+N = 30
 N0, N1, N2 = 10, 10, 10
 K = 3
 
 mu0 = np.array([10, 0])
 X0 = np.random.randn(2, N0) + mu0[:, np.newaxis]
-
 
 mu1 = np.array([-10, 10])
 X1 = np.random.randn(2, N1) + mu1[:, np.newaxis]
@@ -32,6 +30,18 @@ def escribePuntos(V,long):
         f.write(str(V[1][i]))
         f.write('\n')
     return
+
+#escribimos la cabecera
+f.write(str(N))
+f.write('\n')
+f.write(str(K))
+f.write('\n')
+f.write(str(N0))
+f.write('\n')
+f.write(str(N1))
+f.write('\n')
+f.write(str(N2))
+f.write('\n')
 
 #escribimos los putnos con formato
 escribePuntos(X0,N0)
