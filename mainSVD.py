@@ -26,4 +26,6 @@ U, D2, Vt, Xmean = mySVD.computeSVD()
 
 d = mySVD.computeDprime(D2,D,eps)
 
-mySVD.plotPoints(N,U,Xmean)
+#mySVD.plotPoints(N,U,Xmean)
+
+mySVD.plotGrid(N,U,Xmean)

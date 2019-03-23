@@ -56,3 +56,16 @@ class SVD:
             ax = fig.add_subplot(2,10,k)
             self.show_digit(solu[1])
             d = d+d
+            
+    def plotGrid(self, N,U,Xmean):
+        fig = plt.figure()
+        fig.subplots_adjust(hspace=0.4, wspace=0.4)
+        d = 10
+        rnd_numbers = np.random.randint(0,N,10)
+        for i in range(1, 61):
+            ax = fig.add_subplot(6, 10, i)
+            solu = self.reduccionDim(d,rnd_numbers[i%10],U,Xmean)
+            self.show_digit(solu[1])
+            d = d+5
+            
+            
