@@ -2,9 +2,12 @@
 """
 Created on Thu Feb  7 09:51:09 2019
 
-@author: Belen Serrano, Álvaro García
+@author: Belén Serrano, Álvaro García
 
 """
+
+#This class contains the basic functions to compute the least squared 
+#classifier 
 
 import numpy as np
 # Let D be the dimension of our data column vectors.
@@ -20,23 +23,23 @@ class LeastSquaresClassifier:
     def __init__(self, x, t):
         self.x = x
         self.t = t
-        # w is the matrix of the classifier, which is empty at first.
-        #self.w = np.array()
 
     # Computes a minimum square affine classifier
     # for the training data x and the tags t
     def compute_classifier(self):
         xt = np.transpose(self.x)
         tt = np.transpose(self.t)
-        # solving without inverting
+        #The gradient of our error function (Wt*X - T)Xt = 0
+        # solving the equation (W) without inverting:
         return np.linalg.solve(np.dot(self.x,xt),np.dot(self.x,tt))
 
-    # Classify the given data x according to the
-    # previously computed classifier.
+    # Classify the given data x according to the previously computed classifier
+    # (myw).
     # x must be a column vector
     def classify(self, myx,myw):
-        myx = np.append(1, myx)
+        myx = np.append(1, myx) 
         mywt = np.transpose(myw)
-        # Returns the index of the maximum coordinate
+        # Returns the class of the given point (the index of the maximum
+        # coordinate)
         return np.argmax(np.dot(mywt,myx))
 
