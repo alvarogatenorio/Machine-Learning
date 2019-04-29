@@ -17,7 +17,7 @@ print("Sorting the labels...")
 sorted_label = np.argsort(label)
 sorted_label = sorted_label.flatten()
 
-# get each class elements
+# get each class elements...
 print("Getting the number of elements of every class...")
 unique_counts = np.unique(label, return_counts = True)[1]
 classes = unique_counts.shape[0]
@@ -26,7 +26,6 @@ reduced_dim = classes - 1
 # computing dispersion between classes...
 print("Computing dispersion between classes...")
 # computing each class mean...
-# meter los data_k en un array
 data_k = data[:, sorted_label[ 0 : unique_counts[0] ] ]
 mks = np.mean(data_k, axis = 1)
 mks = mks[:, np.newaxis]
