@@ -104,6 +104,6 @@ m2 = data[:, cardinals[0]:].mean(axis = 1)
 w = compute_projection(data, cardinals)
 c = compute_cut(data, cardinals, w, m1, m2)
 d = w.T.dot(m1+m2) / 2
-plot_cut(w, c, data)
-plot_cut(w, d, data)
+plot_cut(w, -c, data)
+plot_cut(w, -d, data)
 plt.show()
