@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Apr  5 22:36:24 2019
+# k-nn algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Belén Serrano Antón, Álvaro García Tenorio
-
-"""
 
 import operator
 import math

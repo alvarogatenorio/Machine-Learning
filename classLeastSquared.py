@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -* -
-"""
-Created on Thu Feb  7 09:51:09 2019
-
-@author: Belén Serrano, Álvaro García
-
-"""
+#  least squared algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
 #This class contains the basic functions to compute the least squared 
 #classifier 

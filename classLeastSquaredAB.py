@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 18 17:31:44 2019
-
-@author: Belén Serrano, Álvaro García
-"""
+# least squared alpha beta algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
 #This class contains the basic functions to compute the least squared 
 #classifier using Fisher's linear discriminant

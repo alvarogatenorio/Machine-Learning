@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  6 12:45:43 2019
+# main k-nn algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Belén Serrano Antón, Álvaro García Tenorio
-"""
 
 import classIOKNN
 import KNN
@@ -16,7 +13,8 @@ myData = classIOKNN.myIO('puntosGeneradosKNN.txt');
 #(numPuntos, matrizPuntos,numClases,numPuntosXclase)
 #(numPoints, matrix with data,)
 trainingPoints = myData.readData();
-K = trainingPoints[2]
+#K = trainingPoints[2]
+K = 4
 numPoints = trainingPoints[0]
 
 mySolutions = KNN.KNN(trainingPoints[1],trainingPoints[2])
@@ -55,6 +53,8 @@ def onclick(event):
     pointClass = 0 #initialization
     newpoint = np.array([ix,iy,pointClass])
     newClass = int(mySolutions.classify(newpoint))
+    #comment this line if you don't want to add the new point into the data
+    matrizPuntos.append(np.array([ix,iy,newClass]))
     print("La clase del punto ("+ str(ix) + "," + str(iy)  + ") es: " + str(newClass +1))
     ax.plot(ix,iy, classID[newClass])
     plt.draw()

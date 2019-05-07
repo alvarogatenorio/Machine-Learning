@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 15 19:29:52 2019
+# main least squared  algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Belen
-"""
 import classIO
 import classLeastSquared
 import numpy as np
