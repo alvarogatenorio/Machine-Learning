@@ -30,7 +30,7 @@ class LeastSquaresClassifierAB:
         # mean of the data x
         m = (self.n1 * m1 + self.n2*m2)/(self.n1+self.n2)
         # affine part of the classifier
-        m0 = np.dot((np.transpose(W)),m)
+        m0 = -np.dot((np.transpose(W)),m)
         return np.array([[m0],W])
 
     # Classify the given data x according to the
