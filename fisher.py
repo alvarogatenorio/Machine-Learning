@@ -77,13 +77,10 @@ def compute_cut(data, cardinals, w, m1, m2):
     b = -(m1_proj * sigma2_cuad + m2_proj * sigma1_cuad) / (sigma1_cuad * sigma2_cuad)
     c = (((m1_proj ** 2) * sigma2_cuad + (m2_proj ** 2) * sigma1_cuad) / (2 * sigma1_cuad * sigma2_cuad)) + np.log(p1 / sigma1) + np.log(p2 / sigma2)
     roots = np.roots(np.array([a,b,c]))
-    #delta = np.sqrt(b ** 2 - 4 * a * c)
-    #x1 = (-b + delta) / (2 * a)
-    #x2 = (-b - delta) / (2 * a)
-    if derivative_evaluation(roots[0], a, b, c) <= 0:
-        return roots[0]
+    if derivative_evaluation(roots[0], a, b, c) >= 0:
+        return np.real(roots[0])
     else:
-        return roots[1]
+        return np.real(roots[1])
 
 def derivative_evaluation(x, a, b, c):
     return 2 * a * x + b
@@ -91,10 +88,10 @@ def derivative_evaluation(x, a, b, c):
 def evaluate_line(a, b, c, x):
     return (-a * x - c) / b
 
-def plot_cut(w, c, data):
+def plot_cut(w, c, data, linestyle = None):
     a = np.min(data[0])
     b = np.max(data[0])
-    plt.plot([a, b], [evaluate_line(w[0], w[1], np.real(c), a), evaluate_line(w[0], w[1], np.real(c), b)])
+    plt.plot([a, b], [evaluate_line(w[0], w[1], c, a), evaluate_line(w[0], w[1], c, b)], linestyle = linestyle)
 
 data, cardinals = generate_data(max_cluster_size = 100, centroid_dispersion = 2, same_deformation = True, plot = True)
 plt.scatter(data[0, :cardinals[0]], data[1, :cardinals[0]])
@@ -105,5 +102,5 @@ w = compute_projection(data, cardinals)
 c = compute_cut(data, cardinals, w, m1, m2)
 d = w.T.dot(m1+m2) / 2
 plot_cut(w, -c, data)
-plot_cut(w, -d, data)
+plot_cut(w, -d, data, linestyle = 'dashed')
 plt.show()
