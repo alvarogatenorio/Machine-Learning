@@ -54,9 +54,7 @@ def onclick(event):
     plt.draw()
     return coords
 
-for i in range(0,1):
-
-    cid = fig.canvas.mpl_connect('button_press_event', onclick)
+fig.canvas.mpl_connect('button_press_event', onclick)
     
 plt.show()
 

@@ -67,10 +67,10 @@ def onclick(event):
     else:
         ax.plot(ix,iy, classID[1])
     plt.draw()
-    
-for i in range(0,1):
 
-    cid = fig.canvas.mpl_connect('button_press_event', onclick)
+    
+#interactive part:
+fig.canvas.mpl_connect('button_press_event', onclick)
     
 plt.show()
 
