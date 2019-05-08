@@ -1,3 +1,6 @@
+# read data least squared algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
+
 import numpy as np
 from io import StringIO
 #import array as arr

@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 13 19:35:21 2019
+# SVD algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Álvaro García, Belén Serrano
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 

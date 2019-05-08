@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 18 18:01:05 2019
+# main least squared alpha beta algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: MRS
-"""
 
 import classIOAB
 import classLeastSquaredAB

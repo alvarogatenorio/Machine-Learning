@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  6 12:53:50 2019
+# generate points k-nn algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Belén Serrano Antón, Álvaro García Tenorio
-"""
 
 import numpy as np
 import matplotlib.pyplot as plt

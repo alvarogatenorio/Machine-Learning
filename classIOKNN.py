@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  6 13:57:09 2019
+# read data k-nn algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
-@author: Belén Serrano Antón, Álvaro García Tenorio
-"""
 
 import numpy as np
 from io import StringIO

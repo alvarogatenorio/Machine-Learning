@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 13 20:22:54 2019
-
-@author: Álvaro García, Belén Serrano
-
-"""
+# main SVD algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
 
 import SVDio as classSVDio

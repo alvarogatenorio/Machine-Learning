@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 13 19:39:08 2019
-
-@author: Álvaro García, Belén Serrano
-
-"""
+# read data SVD algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
 from scipy.io import loadmat
 

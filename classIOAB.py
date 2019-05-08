@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 18 17:56:41 2019
-
-@author: MRS
-"""
+# read data least squared alpha beta algorithm
+# Álvaro García Tenorio, Belén Serrano Antón
 
 import numpy as np
 from io import StringIO
