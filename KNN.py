@@ -55,8 +55,9 @@ class KNN:
                 # Initialize it to 1. 
                 count[neighbors[i][indexNeighborClass]] = 1; 
             else: 
-                # Found another item of class  
-                # c[i]. Increment its counter. 
+                # Found another item of class
+                #neighbors[i][indexNeighborClass].
+                #Increment its counter. 
                 count[neighbors[i][indexNeighborClass]] += 1; 
                 if(count[neighbors[i][indexNeighborClass]] > maxClassCount):
                     maxClassCount = count[neighbors[i][indexNeighborClass]]

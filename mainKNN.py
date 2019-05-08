@@ -14,7 +14,7 @@ myData = classIOKNN.myIO('puntosGeneradosKNN.txt');
 #(numPoints, matrix with data,)
 trainingPoints = myData.readData();
 #K = trainingPoints[2]
-K = 4
+K = 4 #number of neighbors 
 numPoints = trainingPoints[0]
 
 mySolutions = KNN.KNN(trainingPoints[1],trainingPoints[2])
@@ -33,8 +33,8 @@ ax = fig.add_subplot(111)
 classID = ['bo','go','ro','co','mo','ko']
 
 matrizPuntos = trainingPoints[1]
-pointX = matrizPuntos[1][0]
-pointY = matrizPuntos[1][1]
+#pointX = matrizPuntos[1][0]
+#pointY = matrizPuntos[1][1]
 
 for i in range(0,numPoints):
     pointClass = int(trainingPoints[1][i][2])
@@ -54,7 +54,7 @@ def onclick(event):
     newpoint = np.array([ix,iy,pointClass])
     newClass = int(mySolutions.classify(newpoint))
     #comment this line if you don't want to add the new point into the data
-    matrizPuntos.append(np.array([ix,iy,newClass]))
+    #matrizPuntos.append(np.array([ix,iy,newClass]))
     print("La clase del punto ("+ str(ix) + "," + str(iy)  + ") es: " + str(newClass +1))
     ax.plot(ix,iy, classID[newClass])
     plt.draw()
